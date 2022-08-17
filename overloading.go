@@ -65,6 +65,6 @@ Example output
 go run .\overloading.go
 1660769805
 1660769805
-1601906400 <-- sub.AFuncThatUsesITime() is the winnig soultion
+1601906400 <-- sub.AFuncThatUsesITime() is the soultion.
 1660769805
 */
