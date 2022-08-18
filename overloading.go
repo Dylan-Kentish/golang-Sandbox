@@ -9,11 +9,15 @@ type Base struct{ ITime }
 
 type Sub struct{ Base }
 
-func (b *Base) Time() uint32 {
+type RealTime struct{}
+
+type FakeTime struct{}
+
+func (t *RealTime) Time() uint32 {
 	return uint32(time.Now().Unix()) // truncation is desired
 }
 
-func (b *Sub) Time() uint32 {
+func (t *FakeTime) Time() uint32 {
 	// Monday, October 5, 2020 9:00:00 AM GMT-05:00
 	return 1601906400
 }
@@ -31,15 +35,17 @@ func (b *Base) AFuncThatUsesTime() {
 }
 
 func NewBase() *Base {
-	base := &Base{}
-	base.ITime = interface{}(base).(ITime)
-	return base
+	return &Base{
+		ITime: &RealTime{},
+	}
 }
 
 func NewSub() *Sub {
-	sub := &Sub{}
-	sub.ITime = interface{}(sub).(ITime)
-	return sub
+	return &Sub{
+		Base: Base{
+			ITime: &FakeTime{},
+		},
+	}
 }
 
 func main() {
