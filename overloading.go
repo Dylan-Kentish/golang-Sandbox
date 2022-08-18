@@ -26,16 +26,8 @@ func (b *Base) GetITime() uint32 {
 	return b.ITime.Time()
 }
 
-func (b *Base) GetTime() uint32 {
-	return interface{}(b).(ITime).Time()
-}
-
-func (b *Base) AFuncThatUsesITime() {
-	fmt.Println(b.GetITime())
-}
-
 func (b *Base) AFuncThatUsesTime() {
-	fmt.Println(b.GetTime())
+	fmt.Println(b.GetITime())
 }
 
 func NewBase() *Base {
@@ -52,11 +44,9 @@ func NewSub() *Sub {
 
 func main() {
 	base := NewBase()
-	base.AFuncThatUsesITime()
 	base.AFuncThatUsesTime()
 
 	sub := NewSub()
-	sub.AFuncThatUsesITime()
 	sub.AFuncThatUsesTime()
 }
 
@@ -64,7 +54,5 @@ func main() {
 Example output
 go run .\overloading.go
 1660769805
-1660769805
-1601906400 <-- sub.AFuncThatUsesITime() is the soultion.
-1660769805
+1601906400
 */
