@@ -1,6 +1,6 @@
 # golang Sandbox (code examples)
 
-This project doesn't have any specifc goals. I aim to use this repository to document any specific problems I face whilst developing in go. I will use this space to expreiment with different solutions and verify the behaviour (perhaps incorporating unit tests).
+This project doesn't have any specifc goals. I aim to use this repository to document any specific problems I face whilst developing in go. I will use this space to experiment with different solutions and verify the behaviour (perhaps incorporating unit tests).
 
 ---
 
