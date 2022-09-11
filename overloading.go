@@ -9,9 +9,9 @@ type Base struct{ ITime }
 
 type Sub struct{ Base }
 
-type RealTime struct{}
+type RealTime struct{ ITime }
 
-type FakeTime struct{}
+type FakeTime struct{ ITime }
 
 func (t *RealTime) Time() uint32 {
 	return uint32(time.Now().Unix()) // truncation is desired
@@ -26,12 +26,8 @@ type ITime interface {
 	Time() uint32
 }
 
-func (b *Base) GetITime() uint32 {
-	return b.ITime.Time()
-}
-
-func (b *Base) AFuncThatUsesTime() {
-	fmt.Println(b.GetITime())
+func (b *Base) AMethodThatUsesTime() {
+	fmt.Println(b.ITime.Time())
 }
 
 func NewBase() *Base {
@@ -50,10 +46,10 @@ func NewSub() *Sub {
 
 func main() {
 	base := NewBase()
-	base.AFuncThatUsesTime()
+	base.AMethodThatUsesTime()
 
 	sub := NewSub()
-	sub.AFuncThatUsesTime()
+	sub.AMethodThatUsesTime()
 }
 
 /*
