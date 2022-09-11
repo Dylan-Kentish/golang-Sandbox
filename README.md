@@ -4,10 +4,19 @@ This project doesn't have any specifc goals. I aim to use this repository to doc
 
 ---
 
-## func overloading: [overloading.go](overloading.go) 
+## method overloading: [overloading.go](overloading.go) 
 A code example demonstrating how to overload a method in golang, this can be useful in test scenarios where using 'live' values is unhelpful; such as time values.
 
 Significantly inspired by [Golang Method Override](https://stackoverflow.com/a/38127673)
+
+Try running the command: `go run overloading/overloading.go`
+
+---
+
+## using generics: [generics.go](generics.go)
+A code example demonstrating how to use generics.
+
+Try running the command: `go run generics/generics.go`
 
 ---
 
