@@ -20,4 +20,11 @@ Try running the command: `go run generics/generics.go`
 
 ---
 
+## cloning: [cloning.go](cloning/cloning.go)
+A code example demonstrating how to clone, with a consistent interface.
+
+Try running the command: `go run cloning/cloning.go`
+
+---
+
 What problems lie ahead...
