@@ -98,8 +98,8 @@ func main() {
 
 	// Is Sub2 ICloneable?
 	{
-		var sub2 ICloneable
-		sub2 = NewSub2() // Nope
-		_ = sub2
+		// var sub2 ICloneable
+		// sub2 = NewSub2() // Nope
+		// _ = sub2
 	}
 }
